@@ -172,7 +172,6 @@ indian-railway-delays-data-pipeline/
 │   └── project_summary.pdf
 │
 ├── README.md
-└── .gitignore
 ```
 
 ---
