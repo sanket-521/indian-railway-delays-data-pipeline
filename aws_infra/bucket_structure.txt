@@ -1,0 +1,27 @@
+# S3 Bucket Structure for Indian Railway Delays Data Pipeline
+
+Bucket Name: indian-railway-delays-data-pipeline-sanket
+
+├── raw/
+│   └── train_delays.csv
+
+├── staging/
+│   └── train_delays_cleaned/
+│       ├── part-0000.parquet
+│       ├── part-0001.parquet
+│       └── ...
+
+└── curated/
+    ├── avg_delay_per_train/
+    │   ├── part-0000.parquet
+    │   ├── part-0001.parquet
+    │   └── ...
+    └── avg_delay_per_route/
+        ├── part-0000.parquet
+        ├── part-0001.parquet
+        └── ...
+
+# Notes:
+- Each ETL job writes outputs in Parquet format.
+- Staging is columnar optimized for analytical reads.
+- Curated contains aggregated results.

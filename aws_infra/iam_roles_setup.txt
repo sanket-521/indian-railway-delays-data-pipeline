@@ -1,0 +1,27 @@
+# IAM Role Setup for AWS Glue Jobs
+
+## Role Name:
+AWSGlueServiceRole_IndianRailwayPipeline
+
+## Attached Policies:
+1. AmazonS3FullAccess
+   → To allow read/write access to S3 buckets used for raw, staging, and curated zones.
+
+2. AWSGlueServiceRole
+   → Provides Glue ETL job and crawler access to Glue Data Catalog and CloudWatch Logs.
+
+3. AmazonAthenaFullAccess
+   → Allows Athena queries on curated data through the Glue Catalog.
+
+4. CloudWatchLogsFullAccess
+   → Enables Glue job logs and monitoring.
+
+## Trusted Entity:
+- glue.amazonaws.com
+
+## Why it’s needed:
+The Glue jobs need permissions to:
+✅ Read from Raw layer  
+✅ Write to Staging and Curated layers  
+✅ Create/Update Glue Catalog tables  
+✅ Query data via Athena

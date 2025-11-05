@@ -1,0 +1,11 @@
+# Glue Job Parameters for Indian Railway Delay Pipeline
+
+## 1️⃣ transform_to_staging.py
+--JOB_NAME indian-railway-transform
+--SOURCE_PATH s3://indian-railway-delays-data-pipeline-sanket/raw/train_delays.csv
+--TARGET_PATH s3://indian-railway-delays-data-pipeline-sanket/staging/train_delays_cleaned/
+
+## 2️⃣ load_to_curated.py
+--JOB_NAME indian-railway-curated-load
+--STAGING_PATH s3://indian-railway-delays-data-pipeline-sanket/staging/train_delays_cleaned/
+--CURATED_PATH s3://indian-railway-delays-data-pipeline-sanket/curated/
